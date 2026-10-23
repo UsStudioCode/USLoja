@@ -1,0 +1,330 @@
+/* ==========================================================
+   DESIGN SYSTEM - SIGNUP & RECOVERY (BISSAU)
+   ================================================---------- */
+
+:root {
+  --bg-app: #0b0f19;
+  --bg-card: #111827;
+  --bg-hover: #1f2937;
+  --border-color: #1f2937;
+  --text-main: #e2e8f0;
+  --text-muted: #9ca3af;
+  --accent-blue: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.15);
+  --shadow-card: 0 15px 35px -5px rgba(0, 0, 0, 0.4);
+}
+
+.light-theme {
+  --bg-app: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-hover: #f1f5f9;
+  --border-color: #cbd5e1;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent-blue: #0284c7;
+  --accent-glow: rgba(2, 132, 199, 0.1);
+  --shadow-card: 0 15px 35px -5px rgba(0, 0, 0, 0.08);
+}
+
+.signup-layout-master {
+  min-height: 100vh;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.btn-toggle-theme-flutuante {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s;
+}
+
+.btn-toggle-theme-flutuante:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.signup-container-card {
+  width: 100%;
+  max-width: 540px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow-card);
+  box-sizing: border-box;
+}
+
+.signup-header {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.signup-header .brand-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 12px var(--accent-blue);
+  margin-bottom: 8px;
+}
+
+.signup-header h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 4px 0;
+}
+
+.signup-header p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* BOTÃO GOOGLE */
+.btn-google-auth {
+  width: 100%;
+  background: var(--bg-app);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 11px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s;
+  margin-bottom: 15px;
+}
+
+.btn-google-auth:hover {
+  border-color: var(--accent-blue);
+  background: var(--bg-hover);
+}
+
+.divisor-ou {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  margin: 15px 0;
+}
+
+.divisor-ou::before, .divisor-ou::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.divisor-ou span {
+  padding: 0 10px;
+}
+
+.seletor-tipo-conta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: var(--bg-app);
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.btn-tipo-opcao {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 9px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-tipo-opcao:hover {
+  color: var(--text-main);
+}
+
+.btn-tipo-opcao.ativo {
+  background: var(--accent-blue);
+  color: #fff;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signup-bloco-secao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.signup-bloco-secao:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.signup-bloco-secao h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin: 0;
+}
+
+.grupo-input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.grupo-input label {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.grupo-input input, 
+.grupo-input select {
+  background: var(--bg-app);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.grupo-input input:focus, 
+.grupo-input select:focus {
+  border-color: var(--accent-blue);
+}
+
+.ajuda-input {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.animacao-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-submit-dinamico {
+  background: var(--accent-blue);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 5px;
+  transition: opacity 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-submit-dinamico:hover {
+  opacity: 0.9;
+}
+
+/* ECRÃ DE SUCESSO DE EMAIL / RECUPERAÇÃO */
+.card-sucesso-email {
+  text-align: center;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.icone-sucesso-circulo {
+  width: 65px;
+  height: 65px;
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.card-sucesso-email h2 {
+  font-size: 1.3rem;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.card-sucesso-email p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.texto-aviso-secundario {
+  font-size: 0.75rem !important;
+  color: var(--text-muted);
+  max-width: 400px;
+}
+.go-back{
+  color: var(--accent-blue);
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center; 
+  gap: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,959 @@
+/* ================= PAINEL E ESTRUTURA GERAL ================= */
+.painel-comprador-container {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  min-height: 100vh;
+  padding: 15px 10px;
+  box-sizing: border-box;
+  font-size: 0.85rem;
+}
+
+.painel-header {
+  background: var(--bg-header);
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #334155);
+  margin-bottom: 15px;
+}
+
+.header-brand h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.header-brand p {
+  font-size: 0.75rem;
+  color: var(--text-muted, #94a3b8);
+  margin-top: 2px;
+}
+
+/* ================= NAVEGAÇÃO INFERIOR MODERNA E COMPACTA ================= */
+.painel-abas-baixo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 10px;
+  border-top: 1px solid var(--border-color, #334155);
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.aba-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #94a3b8);
+  padding: 6px 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  transition: color 0.2s ease;
+}
+
+.aba-btn.ativo {
+  color: #38bdf8;
+}
+
+/* ================= SUB-ABAS E BLOCOS DE PRODUTOS ================= */
+.sub-abas-compras {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  overflow-x: auto;
+}
+
+.sub-btn {
+  background: var(--bg-card, #1e293b);
+  border: 1px solid var(--border-color, #334155);
+  color: var(--text-muted, #94a3b8);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.sub-btn.ativo {
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.produto-card-investor {
+  background: var(--bg-card, #1e293b);
+  border: 1px solid var(--border-color, #334155);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-container {
+  height: 110px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  background: #334155;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.produto-info {
+  padding: 10px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.produto-info h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.produto-info .preco {
+  font-weight: 600;
+  color: #38bdf8;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.link-detalhe {
+  font-size: 0.7rem;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.produto-acoes {
+  padding: 0 10px 10px 10px;
+}
+
+.btn-comprado {
+  width: 100%;
+  background: #059669;
+  color: #ffffff;
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.badge-comprado, .badge-sugestao {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: #059669;
+  color: #fff;
+  padding: 2px 6px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.badge-sugestao {
+  background: #7c3aed;
+}
+
+/* ================= SEÇÃO VISTOS E RECENTES ================= */
+.bloco-secao-interna h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted, #94a3b8);
+}
+
+.grid-produtos-compacto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.card-mini-produto {
+  background: var(--bg-card, #1e293b);
+  border: 1px solid var(--border-color, #334155);
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.card-mini-produto img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.mini-info span {
+  font-size: 0.75rem;
+  display: block;
+}
+
+.mini-info strong {
+  font-size: 0.8rem;
+  color: #38bdf8;
+}
+
+/* ================= PEÇA CLARA IA COM PURPLE E ANIMAÇÃO RESPIRATÓRIA ================= */
+.painel-comprador-containered {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.peca-header-banner-purple {
+  background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 100%);
+  border: 1px solid #7c3aed;
+  padding: 14px 18px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.15);
+}
+
+.purple-orb-breathing {
+  width: 24px;
+  height: 24px;
+  background-color: #a78bfa;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #8b5cf6, 0 0 20px #7c3aed;
+  animation: respirarPurple 3s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+@keyframes respirarPurple {
+  0% { transform: scale(0.9); box-shadow: 0 0 5px #7c3aed, 0 0 10px #8b5cf6; opacity: 0.7; }
+  50% { transform: scale(1.3); box-shadow: 0 0 15px #c084fc, 0 0 30px #a855f7; opacity: 1; }
+  100% { transform: scale(0.9); box-shadow: 0 0 5px #7c3aed, 0 0 10px #8b5cf6; opacity: 0.7; }
+}
+
+.peca-header-banner-purple h2 {
+  color: #f3e8ff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.peca-header-banner-purple p {
+  color: #b5add6;
+  font-size: 0.8rem;
+}
+
+.chat-container-curved {
+  background: var(--bg-card, #1e293b);
+  border: 1px solid var(--border-color, #566f93);
+  border-radius: 10px;
+  height: calc(100vh - 165px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.458);
+}
+
+.chat-mensagens {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mensagem {
+  display: flex;
+}
+
+.mensagem.utilizador {
+  justify-content: flex-end;
+}
+
+.mensagem.ia {
+  justify-content: flex-start;
+}
+
+.balaio-msg {
+  max-width: 75%;
+  padding: 8px 12px;
+  border-radius: 10px 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.mensagem.utilizador .balaio-msg {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: #ffffff;
+}
+
+.mensagem.ia .balaio-msg {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #e2e8f0;
+}
+
+.chat-input-area {
+  padding: 10px;
+  background: var(--bg-app, #0f172a);
+  border-top: 1px solid var(--border-color, #334155);
+  display: flex;
+  gap: 8px;
+}
+
+.chat-input-area input {
+  flex: 1;
+  background: var(--bg-card, #1e293b);
+  border: 1px solid var(--border-color, #334155);
+  color: inherit;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.chat-input-area button {
+  background: #7c3aed;
+  color: #ffffff;
+  border: none;
+  width: 35px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= CABEÇALHO SUPERIOR (CUST-TOP-BAR) ================= */
+.cust-top-bar {
+  background: linear-gradient(135deg, var(--bg-card, #1e293b) 0%, #0f172a 100%);
+  padding: 18px 22px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color, #334155);
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cust-user-identity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cust-avatar-box {
+  width: 44px;
+  height: 44px;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid #38bdf8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.cust-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cust-identity-info h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-main, #f8fafc);
+  margin-bottom: 2px;
+  letter-spacing: -0.3px;
+}
+
+.cust-badge-loc {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  color: var(--text-muted, #94a3b8);
+  font-weight: 500;
+}
+
+.cust-status-pill {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* ================= SEÇÃO CONTA E CONFIGURAÇÕES ================= */
+.secao-conta {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.conta-card-investor {
+  background: var(--bg-card);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-color, #334155);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-desenhado {
+  width: 100%;
+  height: 100%;
+  background: #38bdf8;
+  color: #0f172a;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-camera {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.perfil-titulos h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main, #f8fafc);
+  margin-bottom: 4px;
+}
+
+.perfil-titulos p {
+  font-size: 13px;
+  color: var(--text-muted, #94a3b8);
+  margin-bottom: 10px;
+}
+
+.badge-investidor {
+  display: inline-block;
+  background-color: #fff7ed;
+  color: #ff7900;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ================= BADGES EXTRAS DA CONTA ================= */
+.buyer-hidden-input {
+  display: none;
+}
+
+.buyer-perfil-titulos-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.buyer-txt-atualizando-foto {
+  font-size: 11px;
+  color: #38bdf8;
+  margin-top: 2px;
+}
+
+.buyer-badges-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.buyer-badge-vendedor {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.buyer-badge-trabalhador {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+/* ================= UPGRADE BOX ================= */
+.upgrade-box {
+  background-color: var(--bg-card, #0f172a);
+  border: 1px solid var(--border-color, #334155);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.upgrade-box h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted, #94a3b8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.aviso-perfil-incompleto {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 10px;
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+.upgrade-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 540px) {
+  .upgrade-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.upgrade-card-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-card, #1e293b);
+  border: 1px solid var(--border-color, #334155);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.upgrade-card-btn:hover {
+  border-color: #ff7900;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 121, 0, 0.08);
+}
+
+.upgrade-icon {
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upgrade-icon.orange {
+  background-color: #fff7ed;
+  color: #ff7900;
+}
+
+.upgrade-icon.blue {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.upgrade-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main, #f8fafc);
+}
+
+.upgrade-desc {
+  font-size: 11px;
+  color: var(--text-muted, #94a3b8);
+}
+
+/* ================= FORMULÁRIO DO PERFIL ================= */
+.perfil-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+.input-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-grupo label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted, #94a3b8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.input-grupo input, .select-customizado {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--bg-card, #0f172a);
+  border: 1px solid var(--border-color, #334155);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--text-main, #f8fafc);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-grupo input:not(:disabled), .select-customizado:not(:disabled) {
+  background-color: var(--bg-card, #1e293b);
+  border-color: #ff7900;
+  box-shadow: 0 0 0 3px rgba(255, 121, 0, 0.1);
+}
+
+/* Input com Prefixo +245 */
+.phone-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-card, #0f172a);
+  border: 1px solid var(--border-color, #334155);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.phone-prefix {
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff7900;
+  background-color: #fff7ed;
+  border-right: 1px solid var(--border-color, #334155);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.phone-input-wrapper input {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.phone-input-wrapper:focus-within {
+  border-color: #ff7900;
+  box-shadow: 0 0 0 3px rgba(255, 121, 0, 0.1);
+  background-color: var(--bg-card, #1e293b);
+}
+
+.custom-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.botoes-conta {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.btn-editar, .btn-salvar {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-editar {
+  background-color: var(--border-color, #334155);
+  color: var(--text-main, #f8fafc);
+  border: 1px solid var(--border-color, #475569);
+}
+
+.btn-editar:hover {
+  background-color: #475569;
+}
+
+.btn-salvar {
+  background-color: #059669;
+  color: #fff;
+  border: none;
+}
+
+.btn-salvar:hover {
+  background-color: #047857;
+}
+
+/* ================= PREFERÊNCIAS & LOGOUT ================= */
+.configuracoes-extras {
+  border-top: 1px solid var(--border-color, #334155);
+  padding-top: 16px;
+  margin-bottom: 16px;
+}
+
+.configuracoes-extras h3, .logout-area h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted, #94a3b8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.config-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card, #0f172a);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #334155);
+  font-size: 13px;
+}
+
+.config-item span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main, #f8fafc);
+}
+
+.buyer-config-item-border {
+  margin-top: 10px;
+}
+
+.btn-mudar-tema-inline {
+  background: var(--bg-card, #1e293b);
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.btn-mudar-tema-inline:hover {
+  background: #334155;
+}
+
+/* ================= ZONA DE PERIGO / GERIR CONTAS ================= */
+.buyer-zone-margin-top {
+  margin-top: 20px;
+}
+
+.buyer-danger-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card, #0f172a);
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #334155);
+}
+
+.buyer-danger-subtitle {
+  font-size: 11px;
+  color: var(--text-muted, #94a3b8);
+  margin-top: 2px;
+}
+
+.buyer-btn-toggle-danger {
+  background: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.buyer-btn-toggle-danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.buyer-danger-body-box {
+  background: var(--bg-card, #0f172a);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.buyer-danger-action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.buyer-danger-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main, #f8fafc);
+}
+
+.buyer-danger-complete-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.buyer-danger-item-desc {
+  font-size: 11px;
+  color: var(--text-muted, #94a3b8);
+}
+
+.buyer-danger-border-top {
+  border-top: 1px solid var(--border-color, #334155);
+  padding-top: 14px;
+}
+
+.buyer-btn-danger-outline {
+  background: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.buyer-btn-danger-outline:hover {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.buyer-btn-danger-solid {
+  background: #ef4444;
+  border: none;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.buyer-btn-danger-solid:hover {
+  background: #dc2626;
+}
+
+/* ================= LOGOUT ================= */
+.logout-area {
+  border-top: 1px solid var(--border-color, #334155);
+  padding-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-logout {
+  width: 100%;
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-logout:hover {
+  background: rgba(239, 68, 68, 0.25);
+}

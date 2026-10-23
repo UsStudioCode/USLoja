@@ -1,0 +1,419 @@
+/* ==========================================================================
+  FEIRA BANDIM - SISTEMA DE CATEGORIAS RESPONSIVO E MODERNO
+   ========================================================================== */
+
+:root {
+  --mb-bg: #f8fafc;
+  --mb-card-bg: #ffffff;
+  --mb-text-main: #0f172a;
+  --mb-text-muted: #64748b;
+  --mb-border: #e2e8f0;
+  --mb-dark: #0f172a;
+  --mb-radius: 16px;
+  --mb-radius-sm: 10px;
+  --mb-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+.mb-cat-page {
+  background-color: var(--mb-bg);
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--mb-text-main);
+  padding-bottom: 48px;
+}
+
+.mb-cat-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.mb-cat-header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  background-color: var(--mb-card-bg);
+  border-bottom: 1px solid var(--mb-border);
+  padding: 16px 0;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.mb-cat-headers {
+  background-color: var(--mb-card-bg);
+  border-bottom: 1px solid var(--mb-border);
+  padding: 16px 0;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.mb-cat-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.mb-cat-titles h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--bg-outside);
+  letter-spacing: -0.02em;
+  margin: 0 0 2px 0;
+}
+
+.mb-cat-titles p {
+  font-size: 0.75rem;
+  color: var(--mb-text-muted);
+  margin: 0;
+}
+
+.mb-cat-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.mb-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background-color: #f1f5f9;
+  border: 1px solid var(--mb-border);
+  border-radius: var(--mb-radius-sm);
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.mb-icon-btn:hover {
+  background-color: #e2e8f0;
+  color: var(--bg-outside);
+}
+
+.mb-user-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Pesquisa */
+.mb-search-row {
+  display: flex;
+  gap: 8px;
+}
+
+.mb-search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  border: 1px solid var(--mb-border);
+  border-radius: var(--mb-radius-sm);
+  padding: 0 12px;
+  height: 40px;
+  color: var(--mb-text-muted);
+}
+
+.mb-search-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 8px;
+  font-size: 0.85rem;
+  color: var(--mb-dark);
+}
+
+.mb-select-box {
+  display: none;
+}
+
+/* Layout Principal (Mobile First: Empilhado / Acordeão) */
+.mb-layout-slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.mb-categories-sidebar-track {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mb-cat-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Cartão de Categoria */
+.mb-cat-card {
+  background-color: var(--mb-card-bg);
+  border: 1px solid var(--mb-border);
+  border-radius: var(--mb-radius);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--mb-shadow);
+}
+
+.mb-cat-card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.mb-card-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mb-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--mb-dark);
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mb-card-desc {
+  font-size: 0.75rem;
+  color: var(--mb-text-muted);
+  margin: 0;
+}
+
+.mb-card-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.mb-badge {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background-color: #f1f5f9;
+  color: var(--mb-text-muted);
+  font-weight: 600;
+}
+
+.mb-badge.active {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.mb-arrow {
+  color: var(--mb-text-muted);
+  font-size: 0.85rem;
+  transition: transform 0.2s;
+}
+
+.mb-arrow.rotated {
+  transform: rotate(90deg);
+}
+
+/* Estado Selecionado */
+.mb-cat-card.selected {
+  background-color: var(--bg-outside);
+}
+
+.mb-cat-card.selected .mb-card-title,
+.mb-cat-card.selected .mb-card-desc,
+.mb-cat-card.selected .mb-arrow {
+  color: #ffffff;
+}
+
+.mb-cat-card.selected .mb-badge {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Painel Acordeão para Telemóvel (Diretamente embaixo) */
+.mb-detail-panel-mobile {
+  background: var(--mb-card-bg);
+  border: 1px solid var(--mb-border);
+  border-radius: var(--mb-radius);
+  padding: 12px;
+  animation: expandDown 0.25s ease-in-out;
+}
+
+/* Subcategorias */
+.mb-subcat-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.mb-subcat-card {
+  background-color: #f8fafc;
+  border: 1px solid var(--mb-border);
+  border-radius: var(--mb-radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mb-subcat-card:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.mb-subcat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mb-subcat-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--mb-dark);
+}
+
+.mb-subcat-count {
+  font-size: 0.72rem;
+  color: var(--mb-text-muted);
+  margin-top: 1px;
+}
+
+/* Estados */
+.mb-loading-wrap {
+  text-align: center;
+  padding: 50px 0;
+  color: var(--mb-text-muted);
+}
+
+.mb-spinner {
+  width: 30px;
+  height: 30px;
+  border-top-color: var(--bg-outside);
+  border-radius: 50%;
+  animation: mb-spin 0.7s linear infinite;
+  margin: 0 auto 10px auto;
+}
+
+@keyframes mb-spin {
+  to { transform: rotate(360deg); }
+}
+
+.mb-empty-state {
+  text-align: center;
+  padding: 24px;
+  color: var(--mb-text-muted);
+  font-size: 0.85rem;
+}
+
+@keyframes expandDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   TABLETS E COMPUTADORES (Layout Lado a Lado)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .mb-cat-titles h1 {
+    font-size: 1.5rem;
+  }
+
+  .mb-layout-slider-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  /* Oculta o acordeão móvel no desktop/tablet */
+  .mb-detail-panel-mobile {
+    display: none !important;
+  }
+
+  /* Coluna da Esquerda (Lista fixa/com scroll) */
+  .mb-categories-sidebar-track.slide-left {
+    width: 340px;
+    flex-shrink: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+  .mb-categories-sidebar-track.slide-left::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .mb-categories-sidebar-track.slide-left::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 4px;
+  }
+
+  /* Painel lateral Direito Clássico para Desktop */
+  .mb-detail-panel-slide {
+    flex: 1;
+    position: sticky;
+    top: 20px;
+    background: var(--mb-card-bg);
+    border: 1px solid var(--mb-border);
+    border-radius: var(--mb-radius);
+    padding: 16px;
+    box-shadow: var(--mb-shadow);
+    animation: expandDown 0.3s ease;
+  }
+
+  .mb-detail-header-card {
+    border-bottom: 1px solid var(--mb-border);
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+  }
+
+  .mb-detail-header-card h2 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--bg-outside);
+    margin: 0 0 2px 0;
+  }
+
+  .mb-detail-header-card p {
+    font-size: 0.8rem;
+    color: var(--mb-text-muted);
+    margin: 0;
+  }
+
+  .mb-subcat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+@media (max-width: 767px) {
+    .mb-detail-panel-slide {
+      display: none;
+  }
+}

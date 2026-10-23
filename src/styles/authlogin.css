@@ -1,0 +1,15 @@
+
+.body{
+    min-height: 100vh;
+    background: #e7ebf0;
+    scale: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+.inner{
+        background: #e7ebf0;
+
+}
