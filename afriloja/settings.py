@@ -1,12 +1,18 @@
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-)gi$vs2-yi$^ok*4zi$^_yvc9j+fmlkj_&9u7dsv1nh5vze%78'
+AUTH_USER_MODEL = 'AUTHENTICATION.Auth'
+SECRET_KEY = os.getenv("django_secret")
 
-DEBUG = True
+DEBUG = os.getenv("debug") in ["True", "true", "1"]
+# DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv("allowed_host", "localhost:8000,").split(",")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -15,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'AUTHENTICATION'
 ]
 
 MIDDLEWARE = [
@@ -83,4 +90,49 @@ MAILERS = {
     'default': {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
+}
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(hours=12),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": True,
+
+    "ALGORITHM": "HS256", # symetric, change to asymetric later if i adopt microservices
+    "SIGNING_KEY": os.getenv("jwt_secret"),
+    "AUDIENCE": "afriloja-api",
+    "ISSUER": None,
+    "JSON_ENCODER": None,
+    # "JWK_URL": None, concern when i decide to implement google auth
+    "LEEWAY": 0, # no extra minutes
+
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
+    "USER_ID_FIELD": "id",
+    "USER_ID_CLAIM": "user_id",
+    "USER_AUTHENTICATION_RULE": "AUTHENTICATION.auth.should_authenticate",
+    "ON_LOGIN_SUCCESS": "rest_framework_simplejwt.serializers.default_on_login_success",
+
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
+    "TOKEN_TYPE_CLAIM": "token_type",
+    "TOKEN_USER_CLASS": "rest_framework_simplejwt.models.TokenUser",
+
+    "JTI_CLAIM": "jti",
+
+    "TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainPairSerializer",
+    "TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSerializer",
+    "TOKEN_VERIFY_SERIALIZER": "rest_framework_simplejwt.serializers.TokenVerifySerializer",
+
+    "CHECK_USER_IS_ACTIVE": True,
 }
